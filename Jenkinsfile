@@ -3,16 +3,10 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub')
-        IMAGE_NAME = "larudhanu/my-app"
+        IMAGE_NAME = "your-dockerhub-username/my-app"
     }
 
     stages {
-
-        stage('Clone Code') {
-            steps {
-                git credentialsId: 'github', url: 'https://github.com/prisha-pemal/my-app.git'
-            }
-        }
 
         stage('Build Docker Image') {
             steps {
